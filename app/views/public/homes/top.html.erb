@@ -1,0 +1,29 @@
+<div class="container d-flex">
+
+  <%= render 'public/items/genre_search' %>
+
+  <div class="col-lg-9">
+    <row>
+      <div class="jumbotron umbotron-fluid" style="background: url(<%= asset_path "home_image.jpg" %>); background-size:cover;" >
+        <div class="container">
+          <p class="h5 font-weight-bold text-center">
+            ようこそ、ながのCAKEへ！<br>
+            このサイトは、ケーキ販売のECサイトになります。<br>
+            会員でない方も商品の閲覧はできますが、<br>
+            購入には会員登録が必要になります。
+          </p>
+        </div>
+      </div>
+    </row>
+
+    <div>
+      <h2>新着商品</h2>
+    </div>
+
+    <%= render '/public/items/items', items: @items %>
+
+    <%= link_to items_path do %>
+      <p class="text-right">全ての商品を見る ＞</p>
+    <% end %>
+  </div>
+</div>

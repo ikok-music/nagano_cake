@@ -1,0 +1,21 @@
+<div class="col-3">
+  <table class="table table-bordered table-sm mx-auto border-dark" style="width:200px;">
+    <tbody>
+      <tr>
+        <td class="text-center"><strong>ジャンル検索</strong></td>
+      </tr>
+
+      <tr>
+        <td class="px-2" style="height:260px;">
+          <% Genre.all.each do |genre| %>
+            <div class="m-2 text-dark">
+              <%= link_to genre_search_path(genre.id), class: 'text-dark text-decoration-none' do %>
+                <%= genre.name %>
+              <% end %>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
