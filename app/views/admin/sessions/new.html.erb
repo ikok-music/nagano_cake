@@ -1,34 +1,42 @@
-<div class="container">
-  <div class="row mt-3">
-    <div class="offset-1">
-      <h5 class="px-3 bg-secondary text-light">管理者ログイン</h5>
-    </div>
+<div class="container px-5">
+  <div class="mx-5 my-5">
+    <h4 class="bg-light d-inline px-4">
+      管理者ログイン
+    </h4>
   </div>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-group row mt-5">
-      <div class="col-2"></div>
-      <div class="col-2">
-        <%= f.label :email, class: "my-0 align-middle" %>
-      </div>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-4 border border-dark rounded ", id: "exampleFormControlInput1", placeholder: "sample@example.com" %>
-    </div>
+  <row>
+    <%= form_with model: @admin, url: admin_session_path do |f| %>
+      <table class="table table-borderless col-8 mx-auto">
+        <tr>
+          <td class="col-3">メールアドレス</td>
+          <td class="col-9">
+            <div class="field">
+              <%= f.email_field :email, autofocus: true, class: 'w-100 form-control border-dark', placeholder: 'sample@example.com' %>
+            </div>
+          </td>
+        </tr>
 
-    <div class="form-group row mt-2">
-      <div class="col-2"></div>
-      <div class="col-2">
-        <%= f.label :password, class: "my-0 align-middle" %>
-      </div>
-        <%= f.password_field :password, autocomplete: "current-password", class: "col-4 border border-dark rounded" %>
-    </div>
+        <tr>
+          <td>パスワード</td>
+          <td>
+            <div class="field">
+              <%= f.password_field :password, class: 'w-100 form-control border-dark' %>
+            </div>
+          </td>
+        </tr>
 
-    <div class="form-group row mt-4">
-      <div class="col-4"></div>
-      <div class="col-4 px-0">
-        <%= f.submit "ログイン", class: 'btn btn-sm btn-primary px-5' %>
-      </div>
-    </div>
-  <% end %>
+        <tr>
+          <td></td>
+          <td>
+            <div class="actions">
+              <%= f.submit "ログイン", class: 'btn btn-primary' %>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  <row>
 
   <%= render "admin/shared/links" %>
 </div>

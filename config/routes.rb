@@ -10,8 +10,6 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get 'about',to: 'homes#about'
     get 'customers/mypage',to: 'customers#show'
-    get 'customers/edit',to: 'customers#edit'
-    patch 'customers/information',to: 'customers#update'
     get 'customers/unsubscribe',to: 'customers#unsubscribe'
     patch 'customers/withdraw',to: 'customers#withdraw'
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
