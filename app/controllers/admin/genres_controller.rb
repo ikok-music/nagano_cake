@@ -11,7 +11,7 @@ class Admin::GenresController < ApplicationController
       flash[:notice] = "ジャンル登録が完了しました"
       redirect_to admin_genres_path
     else
-      redirect_to actionｔ: 'index'
+      redirect_to admin_genres_path
     end
   end
 

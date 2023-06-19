@@ -21,4 +21,33 @@ class Customer < ApplicationRecord
     super && (self.is_deleted == false)
   end
 
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
+  end
+
+  def address_display
+    '〒' + postal_code + ' ' + address + ' ' + last_name + first_name
+  end
+
+  def address_display_nameless
+    '〒' + postal_code + ' ' + address
+  end
+
+  def full_name
+    last_name + first_name
+  end
+
+  def full_name_space
+    last_name + ' ' + first_name
+  end
+
 end
