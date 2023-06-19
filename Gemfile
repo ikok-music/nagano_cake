@@ -62,3 +62,5 @@ gem 'kaminari','~> 1.2.1'
 gem 'bootstrap5-kaminari-views'
 
 gem 'rails-i18n'
+
+gem 'enum_help'

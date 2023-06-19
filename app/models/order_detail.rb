@@ -8,11 +8,11 @@ class OrderDetail < ApplicationRecord
 	validates :amount, presence: true, numericality: { only_integer: true }
 	validates :price, presence: true, numericality: { only_integer: true }
 
-  enum making_status: {"製作不可": 0,"製作待ち": 1,"製作中": 2,"製作完了": 3}
+  enum making_status: { cannot_be_started: 0, awaiting_manufacture: 1, under_manufacture: 2, manufacturing_completed: 3 }
 
   # 小計を求めるメソッド
   def subtotal
-    item.with_tax_price * amount
+    amount * price
   end
 
 end

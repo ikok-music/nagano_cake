@@ -204,3 +204,20 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  enums:
+      order:
+        payment_method:
+          credit_card: "クレジットカード"
+          transfer: "銀行振込"
+        status:
+          unpaid: "入金待ち"
+          deposit_confirmation: "入金確認"
+          production: "製作中"
+          preparation: "発送準備中"
+          shipped: "発送済み"
+      order_detail:
+        making_status:
+          cannot_be_started: "着手不可"
+          awaiting_manufacture: "製作待ち"
+          under_manufacture: "製作中"
+          manufacturing_completed: "製作完了"
