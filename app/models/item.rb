@@ -15,7 +15,7 @@ class Item < ApplicationRecord
 
   # 消費税メソッド
   def with_tax_price
-    (price * 1.1).floor
+    (self.price * Constants::Tax_rate).floor
   end
 
   def get_image(width, height)
